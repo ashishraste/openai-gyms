@@ -1,6 +1,6 @@
 [[source]]
 url = 'https://pypi.python.org/simple'
-verify_ssl = true
+verify_ssl = false
 name = 'pypi'
 
 [requires]
@@ -8,7 +8,13 @@ python_version = '3.7'
 
 [packages]
 gym = '*'
+jupyter = '*'
+matplotlib = '*'
+seaborn = '*'
+sklearn = '*'
+tqdm = '*'
 
 [dev-packages]
+pyinstaller = '*'
 mypy = '*'
 pytest = '*'
