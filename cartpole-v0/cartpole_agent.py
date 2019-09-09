@@ -84,7 +84,7 @@ class QCartPoleAgent():
             cur_state = self.discretize_state(self.env.reset())
 
             while not episode_done:
-                # self.env.render()
+                self.env.render()
                 action = self.choose_action(cur_state, epsilon)
                 obs, reward, episode_done, _ = self.env.step(action)
                 new_state = self.discretize_state(obs)
@@ -96,7 +96,7 @@ class QCartPoleAgent():
             debug('Score for episode {} is {}'.format(ep, time_step))
             cumulative_reward.append(time_step)
             
-            # Calculative mean cumulative reward over last 100 episodes.
+            # Calculate mean cumulative reward over last 100 episodes.
             mean_cumulative_reward = mean(cumulative_reward)
             if mean_cumulative_reward >= self.min_successful_runs and ep >= 100:
                 if self.verbose: info('Solved after {} episodes. {} trials were taken.'.format(ep+1, ep-99))
