@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     if mode == 'train':
         cartpole_agent = QCartPoleAgent(verbose=True)
-        cartpole_agent.run(mode=mode)
+        cartpole_agent.run(mode=mode, render=True)
         cartpole_agent.save_trained_artefacts()
     elif mode == 'test':
         # Run the agent with pre-trained artefacts.

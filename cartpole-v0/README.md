@@ -1,5 +1,9 @@
 # Cartpole Agent
 
+  Agent Training           |   Agent Testing
+:-------------------------:|:-------------------------:
+![](./images/cartpole_training.gif)  |  ![](./images/cartpole_testing.gif)
+
 This directory contains Reinforcement Learning agent(s) to solve the [cartpole balancing](https://en.wikipedia.org/wiki/Inverted_pendulum) problem simulated by an [Cartpole-v0 OpenAI Gym](https://github.com/openai/gym/wiki/CartPole-v0).
 
 ## Directory Layout
