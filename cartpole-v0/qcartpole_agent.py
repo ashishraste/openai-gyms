@@ -54,8 +54,8 @@ class QCartPoleAgent():
         return tuple(new_obs)
 
     def choose_action(self, state, epsilon):
-        """ Selects an action with an epsilon-greedy policy i.e. with a probability of epsilon \
-            we pick an unexplored action.
+        """ Selects an action with an epsilon-greedy policy i.e. with a probability of epsilon
+        we pick an unexplored action.
         """
         return self.env.action_space.sample() if (random.random() <= epsilon) else argmax(self.Q[state])
 
@@ -140,8 +140,10 @@ class QCartPoleAgent():
         return ep + 1
     
     def save_trained_artefacts(self, filename='cartpole_artefacts'):
-        ''' Saves Q-table and episode index from which successful runs started into a numpy file. 
-        Episode index is required since we set adaptive learning-rate (alpha) and exploration probability (epsilon) based on it.
-        '''
+        """ Saves Q-table and episode index from which successful runs started into a numpy file. 
+        
+        Keyword Arguments:
+            filename {str} -- Name of the artefacts file (default: {'cartpole_artefacts'})
+        """
         artefacts_to_save = {'Q':self.Q, 'successful_episode_index': self.episodes_taken} 
         npsave(filename, artefacts_to_save)

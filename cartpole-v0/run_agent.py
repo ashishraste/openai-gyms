@@ -19,11 +19,16 @@ if __name__ == '__main__':
     argspace = parser.parse_args()
     mode = argspace.mode
 
-    cartpole_agent = QCartPoleAgent(verbose=True)
-    cartpole_agent.run(mode=mode)
-    cartpole_agent.save_trained_artefacts()
-
-    # Run the agent with pre-trained artefacts.
-    # qtable, num_ep = load_trained_artefacts()
-    # cartpole_agent = QCartPoleAgent(verbose=True)
-    # cartpole_agent.run(mode=mode, successful_episode_index=num_ep, render=True, saved_q_table=qtable)
+    if mode == 'train':
+        cartpole_agent = QCartPoleAgent(verbose=True)
+        cartpole_agent.run(mode=mode)
+        cartpole_agent.save_trained_artefacts()
+    elif mode == 'test':
+        # Run the agent with pre-trained artefacts.
+        qtable, num_ep = load_trained_artefacts()
+        cartpole_agent = QCartPoleAgent(verbose=True)
+        cartpole_agent.run(mode=mode, successful_episode_index=num_ep, render=True, saved_q_table=qtable)
+    else:
+        error('Unknown argument \'{}\' given for run mode, quitting ...'.format(mode))
+        parser.print_help()
+        exit(-1)
