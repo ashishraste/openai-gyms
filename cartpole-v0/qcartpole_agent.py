@@ -140,7 +140,8 @@ class QCartPoleAgent():
         return ep + 1
     
     def save_trained_artefacts(self, filename='cartpole_artefacts'):
-        """ Saves Q-table and episode index from which successful runs started into a numpy file. 
+        """ Saves Q-table and episode index into a numpy file.
+        Episode index is considered to be the time-step within an episode from where a successful streak started.
         
         Keyword Arguments:
             filename {str} -- Name of the artefacts file (default: {'cartpole_artefacts'})
