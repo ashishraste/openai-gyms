@@ -99,7 +99,21 @@ Q : (S, A) -> V
 
 In the above notation, (S,A) stands for set of state-action pairs and V for expected rewards.
 
+Q-table updates happen according to the equation give below,
+
+![q-update](./images/q-update.png)
+
+where S', R are the state and reward observed from the environment after taking an action in a given state.
+
 #### Adaptive Learning and Exploration
+
+##### Epsilon Greedy Policy
+
+So far we understand that only after an action in a given state say `s`, we receive a reward which then
+helps us in updating the Q-table. This action is chosen using something called as epsilon-greedy policy,
+which states that with a probability of `epsilon` we choose a random action among all actions available in a
+given state. So with the rest of `1-epsilon` probability, we take the action which has the maximum _expected
+reward_ from the entries in the Q-table corresponding to that given state.
 
 
 
