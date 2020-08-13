@@ -15,6 +15,6 @@ sklearn = '*'
 tqdm = '*'
 
 [dev-packages]
-pyinstaller = '*'
+PyInstaller = '>=3.6'
 mypy = '*'
 pytest = '*'
